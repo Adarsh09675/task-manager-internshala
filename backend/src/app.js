@@ -49,9 +49,19 @@ app.get("/api/v1/health", (_req, res) => {
     timestamp: new Date().toISOString(),
   });
 });
+app.get("/v1/health", (_req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Task manager API is running",
+    timestamp: new Date().toISOString(),
+  });
+});
 
 app.use("/api/v1/auth", authRoutes);
+app.use("/v1/auth", authRoutes);
+
 app.use("/api/v1/tasks", taskRoutes);
+app.use("/v1/tasks", taskRoutes);
 
 if (hasFrontendBuild) {
   app.get(/^(?!\/api).*/, (_req, res) => {
