@@ -1,5 +1,7 @@
 # Task Manager Assignment
 
+> 🚀 **Live Deployment:** [https://task-manager-internshala.vercel.app/](https://task-manager-internshala.vercel.app/)
+
 This repository is now split cleanly into `frontend/` and `backend/`, with this root `README.md` as the main guide.
 
 ## Structure
