@@ -17,6 +17,8 @@ const app = express();
 const frontendDistPath = path.join(__dirname, "..", "..", "frontend", "dist");
 const hasFrontendBuild = fs.existsSync(frontendDistPath);
 
+app.set("trust proxy", 1);
+
 app.use(
   cors({
     origin: ["http://localhost:5173", "http://localhost:5174"],
