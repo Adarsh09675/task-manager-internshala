@@ -1,0 +1,69 @@
+node : node:internal/modules/
+cjs/loader:1368
+At line:1 char:1
++ node src/server.js > 
+test_out.txt 2> test_err.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (node:in  
+  ternal/modules/cjs/loade   
+ r:1368:String) [], Remot    
+eException
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+  throw err;
+  ^
+
+Error: Cannot find module 
+'cookie-parser'
+Require stack:
+- D:\Demoapp\task-manager-int
+ernshala\backend\src\app.js
+- D:\Demoapp\task-manager-int
+ernshala\backend\src\server.j
+s
+    at 
+Function._resolveFilename (no
+de:internal/modules/cjs/loade
+r:1365:15)
+    at defaultResolveImpl (no
+de:internal/modules/cjs/loade
+r:1021:19)
+    at 
+resolveForCJSWithHooks (node:
+internal/modules/cjs/loader:1
+026:22)
+    at Function._load (node:i
+nternal/modules/cjs/loader:11
+75:37)
+    at 
+TracingChannel.traceSync (nod
+e:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:i
+nternal/modules/cjs/loader:23
+5:24)
+    at Module.require (node:i
+nternal/modules/cjs/loader:14
+45:12)
+    at require (node:internal
+/modules/helpers:135:16)
+    at Object.<anonymous> (D:
+\Demoapp\task-manager-interns
+hala\backend\src\app.js:6:22)
+    at Module._compile (node:
+internal/modules/cjs/loader:1
+688:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'D:\\Demoapp\\task-manage
+r-internshala\\backend\\src\\
+app.js',
+    'D:\\Demoapp\\task-manage
+r-internshala\\backend\\src\\
+server.js'
+  ]
+}
+
+Node.js v22.18.0

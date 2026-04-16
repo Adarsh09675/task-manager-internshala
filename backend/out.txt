@@ -1,0 +1,4 @@
+◇ injected env (4) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+MongoDB connected
+Server running on http://localhost:5000
+Swagger docs available at http://localhost:5000/api-docs
