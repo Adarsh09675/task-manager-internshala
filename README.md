@@ -22,7 +22,7 @@ This repository is now split cleanly into `frontend/` and `backend/`, with this 
 
 ## Tech Stack
 
-- Backend: `Node.js`, `Express.js`, `MongoDB`, `Mongoose`, `JWT`, `Zod`, `Swagger`
+- Backend: `Node.js`, `Express.js`, `MongoDB`, `Mongoose`, `JWT`, `Zod`
 - Frontend: `React.js`, `Vite`
 
 ## Install
@@ -76,7 +76,6 @@ Development:
 
 - Frontend: `http://localhost:5173`
 - Backend API: `http://localhost:5000`
-- Swagger docs: `http://localhost:5000/api-docs`
 
 Production-style flow:
 

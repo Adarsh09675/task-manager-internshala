@@ -9,7 +9,6 @@ const fs = require("fs");
 
 const authRoutes = require("./routes/authRoutes");
 const taskRoutes = require("./routes/taskRoutes");
-const { swaggerUi, swaggerSpec } = require("./config/swagger");
 const { notFoundHandler } = require("./middleware/notFound");
 const { errorHandler } = require("./middleware/errorHandler");
 const { sanitizeRequest } = require("./middleware/sanitize");
@@ -51,7 +50,6 @@ app.get("/api/v1/health", (_req, res) => {
   });
 });
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/tasks", taskRoutes);
 
