@@ -1,10 +1,4 @@
 # 🚀 Task Manager Pro - Full Stack Solution
-
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Deployed-brightgreen?style=for-the-badge&logo=vercel)](https://task-manager-internshala.vercel.app/)
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-
 A premium, full-stack task management ecosystem designed for high-efficiency teams. This platform bridges the gap between simple to-do lists and complex project management tools like Jira, offering a streamlined workflow with robust **Role-Based Access Control (RBAC)**.
 
 ![Project Dashboard](docs/screenshots/dashboard.png)
