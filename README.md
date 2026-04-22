@@ -1,135 +1,150 @@
-# Task Manager Assignment
+# 🚀 Task Manager Pro - Full Stack Solution
 
-> 🚀 **Live Deployment:** [https://task-manager-internshala.vercel.app/](https://task-manager-internshala.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Deployed-brightgreen?style=for-the-badge&logo=vercel)](https://task-manager-internshala.vercel.app/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 
-This repository is now split cleanly into `frontend/` and `backend/`, with this root `README.md` as the main guide.
+A premium, full-stack task management ecosystem designed for high-efficiency teams. This platform bridges the gap between simple to-do lists and complex project management tools like Jira, offering a streamlined workflow with robust **Role-Based Access Control (RBAC)**.
 
-## Structure
+![Project Dashboard](docs/screenshots/dashboard.png)
+
+## 🌟 Key Features
+
+### 🛡️ Secure Infrastructure
+*   **JWT-Powered Auth**: Stateless authentication with secure HTTP-only cookie support.
+*   **RBAC Architecture**: Precision-engineered roles for `Admin` and `User` hierarchies.
+*   **Input Sanitization**: Multi-layer defense against XSS and injection attacks.
+*   **Schema Validation**: 100% type-safe API requests handled by **Zod**.
+
+### 👤 User Capabilities
+*   **Task Ownership**: Create and manage personal task silos.
+*   **Dynamic Status Control**: Seamlessly transition tasks through `Pending`, `In-Progress`, and `Completed` states.
+*   **Title Update Requests**: Propose modifications for governed tasks, requiring administrative oversight.
+*   **Collaborative Context**: View tasks assigned directly by team leads.
+
+### 👑 Admin Elite
+*   **Omniscient Visibility**: Full spectrum access to every task and registered user in the system.
+*   **Task Orchestration**: Assign specific tasks to users during the creation phase.
+*   **Administrative Oversight**: Approve or reject user-submitted title change requests with a single click.
+*   **Global Summary Dashboard**: Real-time aggregate analytics showing system-wide productivity metrics.
+*   **Destructive Authority**: Direct override and permanent deletion rights for all platform entities.
+
+---
+
+## 🛠️ Tech Stack
+
+| Core | Technologies |
+| :--- | :--- |
+| **Frontend** | React 18, Vite, Vanilla CSS (Premium Dark Theme), Lucide Icons |
+| **Backend** | Node.js, Express.js (v5), Mongoose ODM |
+| **Database** | MongoDB Atlas (Cloud) / Local |
+| **Security** | JWT, bcryptjs, Helmet, Express Rate Limit |
+| **Documentation** | Swagger (OpenAPI 3.0), Postman |
+| **Validation** | Zod Schema Validation |
+
+---
+
+## 📁 Project Architecture
 
 ```text
-.
-├── backend/
-│   ├── docs/
+task-manager-internshala/
+├── backend/                # Optimized Node.js Server
 │   ├── src/
-│   ├── .env.example
-│   └── package.json
-├── frontend/
+│   │   ├── config/         # Database, Swagger, & Env configs
+│   │   ├── controllers/    # Business logic orchestration
+│   │   ├── middleware/     # Auth, Error handling, Sanitization
+│   │   ├── models/         # Mongoose Schemas (Task, User)
+│   │   ├── routes/         # REST API endpoints
+│   │   ├── services/       # Revocable JWT token services
+│   │   └── validators/     # Zod schema definitions
+├── frontend/               # Ultra-fast React Application
 │   ├── src/
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.js
-├── .gitignore
-└── README.md
+│   │   ├── App.jsx         # State-driven UI logic
+│   │   ├── styles.css      # Custom Design System
+│   │   └── main.jsx        # Entry point
+├── docs/                   # Assets and Postman collections
+└── vercel.json             # Cloud deployment configuration
 ```
 
-## Tech Stack
+---
 
-- Backend: `Node.js`, `Express.js`, `MongoDB`, `Mongoose`, `JWT`, `Zod`
-- Frontend: `React.js`, `Vite`
+## 🚀 Rapid Setup
 
-## Install
+### Prerequisites
+*   Node.js **v18+**
+*   MongoDB Instance (Local or Atlas)
+*   NPM / Yarn
 
-Backend:
+### 1. Initialization
+```bash
+git clone https://github.com/Adarsh09675/task-manager-internshala.git
+cd task-manager-internshala
+```
 
+### 2. Backend Configuration
 ```bash
 cd backend
 npm install
+touch .env # Use .env.example as template
 ```
-
-Frontend:
-
-```bash
-cd frontend
-npm install
-```
-
-## Run
-
-Backend:
-
-```bash
-cd backend
-npm run dev
-```
-
-Frontend:
-
-```bash
-cd frontend
-npm run dev
-```
-
-## Backend Setup
-
-Create `backend/.env` from `backend/.env.example`.
-
+**Environment Variables (`.env`):**
 ```env
 PORT=5000
-MONGODB_URI=mongodb://127.0.0.1:27017/task-manager-internshala
-JWT_SECRET=replace-with-a-long-random-secret
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_complex_secret_key
 JWT_EXPIRES_IN=1d
 ```
 
-If you use MongoDB Atlas, replace `MONGODB_URI` with your Atlas connection string.
+### 3. Frontend Initialization
+```bash
+cd ../frontend
+npm install
+```
 
-## URLs
+---
 
-Development:
+## 🏃 Execution
 
-- Frontend: `http://localhost:5173`
-- Backend API: `http://localhost:5000`
+### Development
+Launch both servers simultaneously:
+```bash
+# Terminal 1: Backend
+cd backend
+npm run dev
 
-Production-style flow:
+# Terminal 2: Frontend
+cd frontend
+npm run dev
+```
 
-1. Build frontend:
-   ```bash
-   cd frontend
-   npm run build
-   ```
-2. Start backend:
-   ```bash
-   cd backend
-   npm start
-   ```
+### Production Build
+```bash
+# In Root Directory
+npm run build
+```
 
-Then the frontend is served by the backend at `http://localhost:5000`.
+---
 
-## Role-Based Access Control (RBAC)
+## 📖 API Documentation & Testing
 
-This application strictly separates capabilities between different user roles, guaranteeing a seamless and secure Jira-like task flow.
+Once the server is operational, explore the fully interactive **Swagger UI**:
+📍 `http://localhost:5000/api-docs`
 
-### User
-- **Create & View**: Can create personal tasks and view tasks that they created or were officially assigned to them by an Admin.
-- **Status Control**: Has explicit permission to freely transition the active status (Pending, In-Progress, Completed) of their available tasks.
-- **Request Updates**: Cannot arbitrarily rename governed tasks, but can click "Update" to submit a formal Title Update Request for an Admin to review.
+### Postman Integration
+Import the collection located at `backend/docs/postman_collection.json` for ready-to-use requests including:
+*   Auth (Register/Login)
+*   Task CRUD Operations
+*   Admin Summary
+*   Update Approval Workflow
 
-### Admin
-- **View All Entities**: Has full database visibility to view all Tasks across the whole system and all registered Users.
-- **Assignment Privilege**: Holds the sole right to actively assign a task directly to any specific user exclusively during the Task's creation.
-- **Update & Deletion Ownership**: Can natively overwrite titles, override logic, and permanently delete tasks across the board without restriction.
-- **Request Handling**: Intercepts all user-submitted "Pending Update Requests" rendering on task cards, holding the power to "Approve" or "Reject" them.
-- **Administrative Dashboard**: Can access the exclusive Admin Summary containing dynamically generated aggregate totals spanning the full system state.
+---
 
-## Postman
+## 📄 License
+Distributed under the **MIT License**. See `LICENSE` for more information.
 
-Import `backend/docs/postman_collection.json` into Postman.
+## 🤝 Contact
+**Adarsh** - [GitHub](https://github.com/Adarsh09675)
 
-Use:
-
-- `baseUrl = http://localhost:5000`
-- `token = <jwt after login>`
-- `taskId = <task id after create>`
-
-## Main API Routes
-
-- `POST /api/v1/auth/register`
-- `POST /api/v1/auth/login`
-- `GET /api/v1/auth/me`
-- `GET /api/v1/tasks`
-- `POST /api/v1/tasks`
-- `GET /api/v1/tasks/:id`
-- `PATCH /api/v1/tasks/:id`
-- `DELETE /api/v1/tasks/:id`
-- `GET /api/v1/tasks/admin/summary`
-
-
+---
+*Developed with ❤️ as a core internship project for Internshala.*
